@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VisionText</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    
+    
+</head>
+<body>
+    <button class="dark-mode-toggle" id="darkModeToggle">🌙</button>
+    <h1>VisionText</h1>
+    
+    <div class="container">
+        <div class="camera-column">
+            <video id="webcam" autoplay></video>
+            <img id="capturedImage" alt="Captured Photo" style="display: none;">
+            <div class="button-container">
+                <button id="toggleCamera" class="camera-icon-btn">📷</button>
+                <button id="capture">Capture</button>
+                <div class="enter-hint">Hit Enter to Capture</div>
+                <button id="retake" style="display: none;">Retake</button>
+            </div>
+        </div>
+
+        <div class="text-column">
+            <h2>Extracted Text</h2>
+            <pre id="extractedText">Your text will appear here...</pre>
+            <div class="search-box">
+                <input type="text" id="searchText" placeholder="Selected text">
+                <button id="search">🔍 Search</button>
+                
+                <!-- AI Summary Button with Container -->
+                <div class="ai-summary-container">
+                    <button id="aiSummaryBtn">
+                        <i class="fas fa-robot"></i> AI Summary
+                        <i class="fas fa-caret-down" style="margin-left: 8px;"></i>
+                    </button>
+                    <div class="model-toggle" id="modelToggle">
+                        <div class="model-option active" data-model="fast">
+                            <i class="fas fa-bolt"></i> Fast Model
+                        </div>
+                        <div class="model-option" data-model="accurate">
+                            <i class="fas fa-brain"></i> Accurate Model
+                        </div>
+                    </div>
+                </div>
+                
+                <button id="copyClipboard">📋 Copy</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="ai-summary-section" id="aiSummarySection">
+        <div class="ai-summary-header">
+            <div class="ai-summary-icon">🤖</div>
+            <h2>AI Summary</h2>
+        </div>
+        <div class="model-info" id="modelInfo">
+            <i class="fas fa-info-circle"></i> Using <span id="modelName">Fast Model</span> for this summary
+        </div>
+        <div class="ai-summary-content" id="aiSummaryContent">
+            Your AI-generated summary will appear here...
+        </div>
+        
+        <!-- <div class="tts-controls" id="ttsControls">
+            <button id="speakBtn">
+                <i class="fas fa-microphone"></i>
+            </button>
+            <select id="speedControl">
+                <option value="0.8">0.8x</option>
+                <option value="1" selected>1.0x</option>
+                <option value="1.2">1.2x</option>
+                <option value="1.5">1.5x</option>
+                <option value="2">2x</option>
+            </select>
+        </div> -->
+    </div>
+
+    <div class="app-footer">
+        <p>VisionText &copy; 2025 | Powered by AI</p>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
