@@ -53,7 +53,7 @@
 
     try {
       extractedText.textContent = "Processing image...";
-      const response = await fetch(`${API_URL}/api/ocr`, {
+      const response = await fetch(`/api/ocr`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ image: imageData.split(",")[1] }),
@@ -182,7 +182,7 @@
     aiSummarySection.scrollIntoView({ behavior: "smooth", block: "start" });
 
     try {
-      const response = await fetch(`${API_URL}/api/summarize`, {
+      const response = await fetch(`/api/summarize`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
