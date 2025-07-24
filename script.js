@@ -195,7 +195,7 @@
 
       if (response.ok) {
         // Update model info
-        modelName.textContent = "Fast Model";
+        modelName.textContent = "fast";
         modelInfo.classList.add("visible");
 
         // Convert Markdown to HTML
