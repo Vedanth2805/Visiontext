@@ -28,7 +28,8 @@ export default async function handler(req, res) {
     const result = await geminiModel.generateContent([prompt, ...imageParts]);
     const text = (await result.response.text()).replace(/```/g, '').trim();
 
-    res.status(200).json({ text });
+    return res.json({text})
+    // res.status(200).json({ text });
   } catch (error) {
     console.error('OCR Error:', error);
     res.status(500).json({ error: 'Failed to process image' });
